@@ -92,19 +92,22 @@ def intro():
 def game_loop():
     running = True
     game_close = False
-    eunice = pygame.image.load('robotWhale.png')
+    asset_url = resource_path('robotWhale.png')
+    eunice = pygame.image.load(asset_url)
     eunice = pygame.transform.scale(eunice, (130, 100))
     euniceX = 400
     euniceY = 300
     euniceX_change = 0
     euniceY_change = 0
 
-    shark = pygame.image.load('shark.png')
+    asset_url = resource_path('shark.png')
+    shark = pygame.image.load(asset_url)
     shark = pygame.transform.scale(shark, (120, 90))
     sharkX = 400
     sharkY = 150
     
-    whale_fall = pygame.image.load('whale_fall.png')
+    asset_url = resource_path('whale_fall.png')
+    whale_fall = pygame.image.load(asset_url)
     whale_fall = pygame.transform.scale(whale_fall, (100, 70))
     whale_fallX = round(random.randrange(0, dis_width - 50) / 10.0) * 10.0
     whale_fallY = round(random.randrange(0, dis_height - 50) / 10.0) * 10.0
@@ -231,7 +234,7 @@ def game_loop():
         clock.tick(35)
 
     pygame.quit()
-    quit()
+    sys.exit()
 
 
 intro()
